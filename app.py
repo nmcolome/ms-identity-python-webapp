@@ -4,7 +4,9 @@ from flask import Flask, render_template, session, request, redirect, url_for
 from flask_session import Session  # https://pythonhosted.org/Flask-Session
 import msal
 import app_config
+import logging
 
+logging.getLogger("msal").setLevel(logging.WARN)
 
 app = Flask(__name__)
 app.config.from_object(app_config)
